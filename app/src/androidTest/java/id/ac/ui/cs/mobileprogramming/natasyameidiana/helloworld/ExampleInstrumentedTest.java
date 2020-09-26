@@ -32,12 +32,12 @@ public class ExampleInstrumentedTest {
 
     @Before
     public void initValidString() {
-        stringName = "Espresso";
-        stringPhone = "085782197947";
+        stringName = "caca";
+        stringPhone = "123412341234";
     }
 
     @Test
-    public void changeText_sameActivity() {
+    public void scenario_success() {
         onView(withId(R.id.inputName))
                 .perform(typeText(stringName), closeSoftKeyboard());
         onView(withId(R.id.inputPhone))
