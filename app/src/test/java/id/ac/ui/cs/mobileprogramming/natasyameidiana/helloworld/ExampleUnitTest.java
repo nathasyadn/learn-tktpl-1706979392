@@ -11,7 +11,34 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
     @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+    public void checkInput_nameIsNull() {
+        String name = null;
+        String phone = "012301230123";
+        String result = ActivityHelper.giveResult(name, phone);
+        assertEquals(result, "Name or Phone must be filled, found: name:" + name + " phone:" + phone);
+    }
+
+    @Test
+    public void checkInput_phoneIsNull() {
+        String name = "caca";
+        String phone = null;
+        String result = ActivityHelper.giveResult(name,phone);
+        assertEquals(result, "Name or Phone must be filled, found: name:" + name + " phone:" + phone);
+    }
+
+    @Test
+    public void checkInput_filledIsNull() {
+        String name = null;
+        String phone = null;
+        String result = ActivityHelper.giveResult(name, phone);
+        assertEquals(result, "Name or Phone must be filled, found: name:" + name + " phone:" + phone);
+    }
+
+    @Test
+    public void checkInput_phonenumberIsNotValid() {
+        String name = "caca";
+        String phone = "012301230";
+        String result = ActivityHelper.giveResult(name, phone);
+        assertEquals(result, "Phone number is not valid");
     }
 }

@@ -5,27 +5,28 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    int add = 0;
-    Button count;
-    TextView text;
+    Button done;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        count = (Button) findViewById(R.id.button);
-        text = (TextView) findViewById(R.id.angka);
+        done = (Button) findViewById(R.id.button);
 
-        count.setOnClickListener(new View.OnClickListener() {
+        done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                add++;
-                text.setText(String.valueOf(add));
+                EditText name  = (EditText) findViewById(R.id.inputName);
+                EditText phone = (EditText) findViewById(R.id.inputPhone);
+                TextView res = (TextView) findViewById(R.id.result);
+                res.setText(ActivityHelper.giveResult(name.getText().toString(), phone.getText().toString()));
             }
         });
-    }
+            }
 }
