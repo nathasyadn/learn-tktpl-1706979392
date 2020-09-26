@@ -32,7 +32,7 @@ public class ExampleInstrumentedTest {
 
     @Before
     public void initValidString() {
-        stringName = "caca";
+        stringName = "Natasya";
         stringPhone = "123412341234";
     }
 
