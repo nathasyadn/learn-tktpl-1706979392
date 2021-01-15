@@ -16,6 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".FragmentActivityManager"
+            android:label="List User"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="id.ac.ui.cs.mobileprogramming.natasyameidiana.helloworld.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
